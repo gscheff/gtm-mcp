@@ -48,11 +48,9 @@ Changes in `src/gtm_mcp/` are immediately reflected.
 
 
 Run this command from the same directory where `pyproject.toml` is located:
-Unix/macOS
-`python3 -m build`
-
-Windows
-`py -m build`
+|Unix/macOS|Windows|
+|---|---|
+|`python3 -m build`|`py -m build`|
 
 #### 2. Install from built wheel
 
@@ -62,15 +60,12 @@ This command should output a lot of text and once completed should generate two 
 pip install dist/gtm_mcp-0.1.0-py3-none-any.whl
 ```
 
-Fastest installation, no need to build.
-
 #### 3. Install from source tarball
 
 ```bash
 pip install dist/gtm_mcp-0.1.0.tar.gz
 ```
 
-Pip will build from source during installation.
 
 ---
 
