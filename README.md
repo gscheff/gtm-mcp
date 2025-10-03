@@ -52,9 +52,9 @@ Run this command from the same directory where `pyproject.toml` is located:
 |---|---|
 |`python3 -m build`|`py -m build`|
 
-#### 2. Install from built wheel
-
 This command should output a lot of text and once completed should generate two files in the `dist` directory.
+
+#### 2. Install from built wheel
 
 ```bash
 pip install dist/gtm_mcp-0.1.0-py3-none-any.whl
