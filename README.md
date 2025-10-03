@@ -29,18 +29,6 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
 pip install gtm-mcp
 ```
 
-Perfetto 👌 il tuo README è già super dettagliato e usabile sia da utenti finali che da dev.
-L’unica cosa che aggiungerei è un piccolo **blocco “Alternative Install Options”** in modo che chi scarica dal repo capisca subito la differenza tra:
-
-* installazione standard da PyPI
-* installazione da sorgente (con o senza `-e`)
-* installazione dai pacchetti già compilati (`.whl` o `.tar.gz` in `dist/`).
-
-Così non lasciano dubbi a chi non conosce bene la differenza.
-
-Potresti inserirlo subito dopo la sezione `Part 1: Install the Package`. Ti propongo una bozza:
-
----
 
 ### 🔧 Alternative Install Options
 
