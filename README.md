@@ -1,4 +1,4 @@
-9# GTM MCP Server
+# GTM MCP Server
 
 A Model Context Protocol (MCP) server that enables Claude to interact with Google Tag Manager.
 
