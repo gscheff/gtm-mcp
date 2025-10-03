@@ -307,15 +307,11 @@ pip install -e ".[dev]"
 pytest
 ```
 
-### Building for Distribution
-
-See [PUBLISHING.md](PUBLISHING.md) for instructions on building and publishing this package to PyPI.
-
 ---
 
 ## 📝 License
 
-MIT - see LICENSE file for details
+see [LICENSE](https://github.com/paolobtl/gtm-mcp/blob/main/LICENSE) file for details
 
 ---
 
