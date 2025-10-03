@@ -1,4 +1,4 @@
-# GTM MCP Server
+9# GTM MCP Server
 
 A Model Context Protocol (MCP) server that enables Claude to interact with Google Tag Manager.
 
@@ -57,7 +57,18 @@ pip install -e .
 Useful if you plan to modify the code locally.
 Changes in `src/gtm_mcp/` are immediately reflected.
 
+
+
+Run this command from the same directory where `pyproject.toml` is located:
+Unix/macOS
+`python3 -m build`
+
+Windows
+`py -m build`
+
 #### 2. Install from built wheel
+
+This command should output a lot of text and once completed should generate two files in the `dist` directory.
 
 ```bash
 pip install dist/gtm_mcp-0.1.0-py3-none-any.whl
