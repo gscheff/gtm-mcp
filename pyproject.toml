@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
 
 [project]
 name = "gtm-mcp"
@@ -24,12 +24,11 @@ classifiers = [
 ]
 
 dependencies = [
-    "mcp>=0.9.0",
-    "google-auth>=2.23.0",
-    "google-auth-oauthlib>=1.1.0",
-    "google-api-python-client>=2.108.0",
-    "python-dotenv>=1.0.0",
-    "pydantic>=2.5.0",
+    "mcp",
+    "python-dotenv",
+    "google-api-python-client",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
 ]
 
 [project.urls]

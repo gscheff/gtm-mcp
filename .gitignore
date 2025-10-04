@@ -44,3 +44,4 @@ token.json
 Thumbs.db
 secrets/
 PUBLISHING.md
+pyproject.toml
