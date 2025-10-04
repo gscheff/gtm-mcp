@@ -2,6 +2,27 @@
 
 A Model Context Protocol (MCP) server that enables Claude to interact with Google Tag Manager.
 
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
+- [Complete Setup Guide](#complete-setup-guide)
+  - [Part 1: Install the Package](#part-1-install-the-package)
+  - [Alternative Install Options](#alternative-install-options)
+  - [Part 2: Create Google Cloud OAuth Credentials](#part-2-create-google-cloud-oauth-credentials)
+  - [Part 3: Configure Claude Desktop](#part-3-configure-claude-desktop)
+  - [Part 4: Restart and Authorize](#part-4-restart-and-authorize)
+- [Available Tools](#available-tools)
+- [How Authentication Works](#how-authentication-works)
+  - [Why Do I Need My Own OAuth Credentials?](#why-do-i-need-my-own-oauth-credentials)
+- [Troubleshooting](#troubleshooting)
+- [Security Notes](#security-notes)
+- [Development](#development)
+- [License](#license)
+- [Contributing](#contributing)
+- [Getting Help](#getting-help)
+
 ## Features
 
 - List GTM accounts and containers
@@ -130,6 +151,7 @@ Edit your Claude Desktop config file:
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Claude Code** `~/.claude.json`
 
 Add your credentials:
 
@@ -220,7 +242,7 @@ For security and privacy:
 **Problem**: The MCP server can't find your credentials.
 
 **Solution**: Make sure you:
-- Set the environment variables correctly in `claude_desktop_config.json`
+- Set the environment variables correctly in `claude_desktop_config.json` (or `~/.claude.json`)
 - Restarted Claude Desktop after editing the config
 - Used the correct format (no extra quotes in JSON)
 - The config file is valid JSON (use a JSON validator if unsure)
