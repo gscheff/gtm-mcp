@@ -50,6 +50,7 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
 pip install gtm-mcp
 ```
 
+See [PyPi](https://pypi.org/project/gtm-mcp/)
 
 ### 🔧 Alternative Install Options
 
