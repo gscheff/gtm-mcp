@@ -33,7 +33,7 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
 
 
 ## Features
-
+[⬆ top](#gtm-mcp-server)
 - List GTM accounts and containers
 - Manage tags, triggers, and variables
 - Create and publish container versions
@@ -42,7 +42,7 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
 ---
 
 ## 🚀 Quick Start
-
+[⬆ top](#gtm-mcp-server)
 ### Prerequisites
 
 - Python 3.10 or higher
@@ -52,7 +52,7 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
 ---
 
 ## 📋 Complete Setup Guide
-
+[⬆ top](#gtm-mcp-server)
 ### Part 1: Install the Package
 
 ```bash
@@ -101,7 +101,7 @@ pip install dist/gtm_mcp-0.1.0.tar.gz
 ---
 
 ### Part 2: Create Google Cloud OAuth Credentials
-
+[⬆ top](#gtm-mcp-server)
 #### Step 1: Create a Google Cloud Project
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -155,7 +155,7 @@ You can also download the JSON file, but you only need the three values above.
 ---
 
 ### Part 3: Configure Claude Desktop
-
+[⬆ top](#gtm-mcp-server)
 Edit your Claude Desktop config file:
 
 - **Linux**: `~/.config/Claude/claude_desktop_config.json`
@@ -187,7 +187,7 @@ Add your credentials:
 ---
 
 ### Part 4: Restart and Authorize
-
+[⬆ top](#gtm-mcp-server)
 1. **Restart Claude Desktop** completely (close and reopen)
 
 2. Ask Claude to use a GTM tool (e.g., "List my GTM accounts")
@@ -206,7 +206,7 @@ Add your credentials:
 ---
 
 ## 🛠️ Available Tools
-
+[⬆ top](#gtm-mcp-server) </br>
 Once configured, Claude will have access to these GTM tools:
 
 | Tool | Description |
@@ -226,7 +226,7 @@ Once configured, Claude will have access to these GTM tools:
 ---
 
 ## 🔐 How Authentication Works
-
+[⬆ top](#gtm-mcp-server) </br>
 This MCP server uses **OAuth 2.0** to securely access Google Tag Manager:
 
 1. **You create OAuth credentials** in your own Google Cloud project
@@ -246,7 +246,7 @@ For security and privacy:
 ---
 
 ## ❓ Troubleshooting
-
+[⬆ top](#gtm-mcp-server)
 ### "Missing required OAuth credentials" Error
 
 **Problem**: The MCP server can't find your credentials.
@@ -314,7 +314,7 @@ You can re-authorize anytime by using any GTM tool in Claude again.
 ---
 
 ## 🔒 Security Notes
-
+[⬆ top](#gtm-mcp-server)
 - **Your OAuth credentials are yours alone** - keep them private
 - **Never share your Client Secret** - treat it like a password
 - Your access tokens are stored locally: `~/.gtm-mcp-token.json`
@@ -336,13 +336,13 @@ pytest
 ---
 
 ## 📝 License
-
+[⬆ top](#gtm-mcp-server)
 see [LICENSE](https://github.com/paolobtl/gtm-mcp/blob/main/LICENSE) file for details
 
 ---
 
 ## 🤝 Contributing
-
+[⬆ top](#gtm-mcp-server)
 Contributions are welcome! Please:
 
 1. Fork the repository
@@ -355,7 +355,7 @@ For bugs and feature requests, please [open an issue](https://github.com/paolobt
 ---
 
 ## 🆘 Getting Help
-
+[⬆ top](#gtm-mcp-server)
 If you encounter issues:
 
 1. Check the [Troubleshooting](#-troubleshooting) section above
