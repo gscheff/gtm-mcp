@@ -17,6 +17,7 @@ class GTMTools:
             "gtm_list_triggers": self._list_triggers,
             "gtm_create_trigger": self._create_trigger,
             "gtm_list_variables": self._list_variables,
+            "gtm_get_variable": self._get_variable,
             "gtm_create_variable": self._create_variable,
             "gtm_publish_container": self._publish_container,
         }
@@ -226,6 +227,14 @@ class GTMTools:
             ]
         }
 
+    async def _get_variable(self, args: Dict[str, Any], client: GTMClient) -> Dict[str, Any]:
+        """Get detailed variable configuration."""
+        variable_path = args["variable_path"]
+        variable = client.get_variable(variable_path)
+        return {
+            "variable": variable
+        }
+
     async def _create_variable(self, args: Dict[str, Any], client: GTMClient) -> Dict[str, Any]:
         """Create a new variable."""
         workspace_path = args["workspace_path"]
@@ -244,9 +253,9 @@ class GTMTools:
                 variable_data["parameter"] = [
                     {"type": "template", "key": "value", "value": config.get("value", "")}
                 ]
-            elif args["variable_type"] == "jsm":  # JavaScript Variable
+            elif args["variable_type"] == "jsm":  # Custom JavaScript Variable
                 variable_data["parameter"] = [
-                    {"type": "template", "key": "name", "value": config.get("javascript_name", "")}
+                    {"type": "template", "key": "javascript", "value": config.get("javascript", "")}
                 ]
             elif args["variable_type"] == "u":  # URL variable
                 variable_data["parameter"] = [
@@ -261,6 +270,24 @@ class GTMTools:
                 variable_data["parameter"] = [
                     {"type": "template", "key": "name", "value": config.get("cookie_name", "")}
                 ]
+            elif args["variable_type"] == "awec":  # User-Provided Data (Enhanced Conversions)
+                # Build user data parameters with proper template type for variable references
+                params = [
+                    {"type": "template", "key": "mode", "value": "MANUAL"}
+                ]
+                # Add user data fields
+                user_data_fields = [
+                    "email", "phone_number", "first_name", "last_name",
+                    "street", "city", "region", "postal_code", "country"
+                ]
+                for field in user_data_fields:
+                    if field in config:
+                        params.append({
+                            "type": "template",
+                            "key": field,
+                            "value": config[field]
+                        })
+                variable_data["parameter"] = params
             else:
                 # Generic parameter handling
                 variable_data["parameter"] = self._build_parameters(config)
@@ -280,9 +307,26 @@ class GTMTools:
         """Build parameter list from configuration dictionary."""
         parameters = []
         for key, value in config.items():
-            parameters.append({
-                "type": "template",
-                "key": key,
-                "value": str(value)
-            })
+            if isinstance(value, list):
+                # Handle list/map parameters (for lookup tables, etc.)
+                parameters.append({
+                    "type": "list",
+                    "key": key,
+                    "list": [
+                        {
+                            "type": "map",
+                            "map": [
+                                {"type": "template", "key": k, "value": str(v)}
+                                for k, v in item.items()
+                            ]
+                        }
+                        for item in value
+                    ]
+                })
+            else:
+                parameters.append({
+                    "type": "template",
+                    "key": key,
+                    "value": str(value)
+                })
         return parameters

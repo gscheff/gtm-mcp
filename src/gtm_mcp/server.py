@@ -188,6 +188,20 @@ class GTMMCPServer:
                     }
                 ),
                 Tool(
+                    name="gtm_get_variable",
+                    description="Get detailed configuration of a specific variable",
+                    inputSchema={
+                        "type": "object",
+                        "properties": {
+                            "variable_path": {
+                                "type": "string",
+                                "description": "Full variable path (e.g., accounts/123/containers/456/workspaces/7/variables/8)"
+                            }
+                        },
+                        "required": ["variable_path"]
+                    }
+                ),
+                Tool(
                     name="gtm_create_variable",
                     description="Create a new variable in a GTM container",
                     inputSchema={

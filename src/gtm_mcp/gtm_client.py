@@ -197,6 +197,15 @@ class GTMClient:
         except HttpError as e:
             raise Exception(f"Failed to list variables: {e}")
 
+    def get_variable(self, variable_path: str) -> Dict[str, Any]:
+        """Get a specific variable's details."""
+        try:
+            return self.service.accounts().containers().workspaces().variables().get(
+                path=variable_path
+            ).execute()
+        except HttpError as e:
+            raise Exception(f"Failed to get variable: {e}")
+
     def create_variable(self, workspace_path: str, variable_data: Dict[str, Any]) -> Dict[str, Any]:
         """Create a new variable in a workspace."""
         try:
