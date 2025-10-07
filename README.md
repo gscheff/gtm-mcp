@@ -23,6 +23,7 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
   - [Part 4: Restart and Authorize](#part-4-restart-and-authorize)
 - [Available Tools](#%EF%B8%8F-available-tools)
 - [How Authentication Works](#-how-authentication-works)
+- [Upgrade](#upgrade)
 - [Troubleshooting](#-troubleshooting)
 - [Security Notes](#-security-notes)
 - [Development](#-development)
@@ -244,7 +245,11 @@ For security and privacy:
 - ✅ Compliant with Google's OAuth policies
 
 ---
+## Upgrade
 
+Run `pip install --upgrade gtm-mcp`
+
+---
 ## ❓ Troubleshooting
 [⬆ top](#gtm-mcp-server)
 ### "Missing required OAuth credentials" Error
