@@ -163,7 +163,20 @@ class GTMMCPServer:
                             },
                             "trigger_type": {
                                 "type": "string",
-                                "description": "Type of trigger (e.g., 'pageview', 'click', 'custom')"
+                                "description": "Type of trigger",
+                                "enum": [
+                                    "pageview", "domReady", "windowLoaded", "customEvent",
+                                    "triggerGroup", "init", "consentInit", "serverPageview",
+                                    "always", "firebaseAppException", "firebaseAppUpdate",
+                                    "firebaseCampaign", "firebaseFirstOpen", "firebaseInAppPurchase",
+                                    "firebaseNotificationDismiss", "firebaseNotificationForeground",
+                                    "firebaseNotificationOpen", "firebaseNotificationReceive",
+                                    "firebaseOsUpdate", "firebaseSessionStart", "firebaseUserEngagement",
+                                    "formSubmission", "click", "linkClick", "jsError",
+                                    "historyChange", "timer", "ampClick", "ampTimer",
+                                    "ampScroll", "ampVisibility", "youTubeVideo",
+                                    "scrollDepth", "elementVisibility"
+                                ]
                             },
                             "trigger_config": {
                                 "type": "object",

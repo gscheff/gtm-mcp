@@ -9,10 +9,6 @@ A Model Context Protocol (MCP) server that enables Claude to interact with Googl
   - [Prerequisites](#prerequisites)
 - [Complete Setup Guide](#-complete-setup-guide)
   - [Part 1: Install the Package](#part-1-install-the-package)
-  - [Alternative Install Options](#-alternative-install-options)
-    - [Install in development mode (editable)](#1-install-in-development-mode-editable)
-    - [Install from built wheel](#2-install-from-built-wheel)
-    - [Install from source tarball](#3-install-from-source-tarball)
   - [Part 2: Create Google Cloud OAuth Credentials](#part-2-create-google-cloud-oauth-credentials)
     - [Step 1: Create a Google Cloud Project](#step-1-create-a-google-cloud-project)
     - [Step 2: Enable Tag Manager API](#step-2-enable-tag-manager-api)
@@ -61,42 +57,6 @@ pip install gtm-mcp
 ```
 
 See [PyPi](https://pypi.org/project/gtm-mcp/)
-
-### 🔧 Alternative Install Options
-
-Instead of installing from PyPI, you can also install from source or from the built distributions:
-
-#### 1. Install in development mode (editable)
-
-```bash
-git clone https://github.com/paolobtl/gtm-mcp.git
-cd gtm-mcp
-pip install -e .
-```
-
-Useful if you plan to modify the code locally.
-Changes in `src/gtm_mcp/` are immediately reflected.
-
-
-
-Run this command from the same directory where `pyproject.toml` is located:
-|Unix/macOS|Windows|
-|---|---|
-|`python3 -m build`|`py -m build`|
-
-This command should output a lot of text and once completed should generate two files in the `dist` directory.
-
-#### 2. Install from built wheel
-
-```bash
-pip install dist/gtm_mcp-0.1.0-py3-none-any.whl
-```
-
-#### 3. Install from source tarball
-
-```bash
-pip install dist/gtm_mcp-0.1.0.tar.gz
-```
 
 
 ---
