@@ -23,9 +23,20 @@ Unlike our google-ads-mcp fork (which requires a patch), this gtm-mcp fork **req
 
 ## Changes from Upstream
 
-### Currently: No Changes
+### 1. Added pyproject.toml for Git Installation
 
-The fork is currently **identical to upstream**. Version 0.2.0 includes all features we need:
+**File:** `pyproject.toml` (new file)
+**Reason:** The upstream repository doesn't include build configuration files, making it impossible to install directly from Git. We added a standard pyproject.toml to enable `uv` and `pip` to install the package from our fork.
+
+**Changes:**
+- Created pyproject.toml with package metadata
+- Configured hatchling build system
+- Added proper package path configuration (`src/gtm_mcp`)
+- Defined entry point for command-line usage
+
+### 2. No Functional Changes
+
+The fork has **no functional changes** from upstream. Version 0.2.0 includes all features we need:
 
 - ✅ customEvent trigger support (added in v0.2.0)
 - ✅ Full GTM API coverage
