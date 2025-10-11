@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-gtm-mcp = "gtm_mcp.server:main"
+gtm-mcp = "gtm_mcp.server:run"
 
 [build-system]
 requires = ["hatchling"]
