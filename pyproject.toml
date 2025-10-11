@@ -1,0 +1,27 @@
+[project]
+name = "gtm-mcp"
+version = "0.2.0"
+description = "A Model Context Protocol server for Google Tag Manager"
+authors = [
+    { name = "Paolo Bietolini" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "google-api-python-client",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
+    "mcp",
+    "python-dotenv",
+]
+
+[project.scripts]
+gtm-mcp = "gtm_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gtm_mcp"]
