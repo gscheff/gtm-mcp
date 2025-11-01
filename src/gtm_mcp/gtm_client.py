@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import List, Dict, Any
 from googleapiclient.errors import HttpError
@@ -5,7 +6,7 @@ from .utils import _authenticate
 
 SERVICE_NAME = 'tagmanager'
 VERSION = 'v2'
-TOKEN_FILE = Path.home() / '.gtm-mcp' / 'token.json'
+TOKEN_FILE = Path(os.getenv('GTM_TOKEN_FILE', str(Path.home() / '.gtm-mcp' / 'token.json')))
 SCOPES = [
     "https://www.googleapis.com/auth/tagmanager.delete.containers",
     "https://www.googleapis.com/auth/tagmanager.edit.containers",
